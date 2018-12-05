@@ -7,7 +7,7 @@ base_url = "https://api.github.com/users/"
 
 def index():
 	if request.method == "POST":
-        githubname = request.form.get("githubname")
+		githubname = request.form.get("githubname")
 		response = requests.get(base_url + githubname)
 		user_info = response.json()
 		return render_template("index.html" , profile = user_info)
