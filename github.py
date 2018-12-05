@@ -12,7 +12,11 @@ def index():
 		user_info = response.json()
 		return render_template("index.html" , profile = user_info)
 
+<<<<<<< HEAD
 	else:
+=======
+	else
+>>>>>>> ea0d10c7904e0ef75b142d8802178a9cb16cc077
 		return render_template("index.html")
 		#return "Hello, World"
 
