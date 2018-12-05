@@ -41,16 +41,16 @@
                         <a href="#" target="_blank" class="btn btn-danger btn-block mb-4">Profili Görüntüle</a>
                       </div>
                       <div class="col-md-9">
-                        <span class="badge badge-primary">Repo Sayısı:  </span>
-                        <span class="badge badge-secondary">Gist Sayısı:  </span>
-                        <span class="badge badge-success">Takipçi: </span>
-                        <span class="badge badge-info">Takip Edilen: </span>
+                        <span class="badge badge-primary">Repo Sayısı:  {{profile.public_repos}}</span>
+                        <span class="badge badge-secondary">Gist Sayısı: {{profile.public_gists}} </span>
+                        <span class="badge badge-success">Takipçi: {{profile.followers}}</span>
+                        <span class="badge badge-info">Takip Edilen: {{profile.following}}</span>
                         <br><br>
                         <ul class="list-group">
-                          <li class="list-group-item">Şirket:</li>
-                          <li class="list-group-item">Website/Blog:</li>
-                          <li class="list-group-item">Yer:</li>
-                          <li class="list-group-item">Ne zamandan beri üye:</li>
+                          <li class="list-group-item">Şirket: {{profile.company}}</li>
+                          <li class="list-group-item">Website/Blog: {{profile.}}</li>
+                          <li class="list-group-item">Yer: {{profile.location}}</li>
+                          <li class="list-group-item">Ne zamandan beri üye: {{profile.created_at}}</li>
                         </ul>
                       </div>
                     </div>
