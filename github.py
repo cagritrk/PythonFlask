@@ -14,7 +14,7 @@ def index():
         repos = response_repos.json()
 
         if "message" in user_info:
-            return render_template("index.html",error = "Kullanıcı Bulunamadı...")
+            return render_template("index.html",error = "Kullanici Bulunamadi...")
         else:
 
             return render_template("index.html",profile = user_info,repos = repos)
