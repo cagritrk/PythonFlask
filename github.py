@@ -1,26 +1,20 @@
 from flask import Flask,render_template,request
 import requests
+
 app = Flask(__name__)
 base_url = "https://api.github.com/users/"
+@app.route("/", methods = ["GET","POST"] )
 
-@app.route("/",methods = ["GET","POST"])
 def index():
-    if request.method == "POST":
-        githubname = request.form.get("githubname")
-        response_user = requests.get(base_url + githubname)
-        response_repos = requests.get(base_url + githubname + "/repos")
+	if request.method == "POST":
+		githubname = request.form.get("githubname")
+		response = request.get(base_url + githubname)
+		user_info = response.json()
+		return render_template("index.html" , profile = user_info)
 
-        user_info = response_user.json()
-        repos = response_repos.json()
-
-        if "message" in user_info:
-            return render_template("index.html",error = "Kullanici Bulunamadi...")
-        else:
-
-            return render_template("index.html",profile = user_info,repos = repos)
-    else:
-        return render_template("index.html")
-		#return "TEST TEXT"
+	else:
+		return render_template("index.html")
+		#return "Hello, World"
 
 if __name__ == "__main__":
 	app.run(debug = True, host='0.0.0.0')
