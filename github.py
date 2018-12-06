@@ -10,7 +10,11 @@ def index():
 		githubname = request.form.get("githubname")
 		response = requests.get(base_url + githubname)
 		user_info = response.json()
-		return render_template("index.html" , profile = user_info)
+
+		if message in user_info:
+			return render_template("index.html" , error = user_info)
+		else:
+			return render_template("index.html" , profile = user_info)
 
 	else:
 		return render_template("index.html")
