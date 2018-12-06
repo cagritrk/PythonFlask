@@ -76,16 +76,14 @@
 
 
         </div>
-        {% else %}
-        
-          {% if error %}
-          <div class = "alert alert-denger">
-            {{error.message}}
-          </div>
-          {% endif %}
 
         {% endif %}
 
+        {% if error %}
+        <div class ="alert alert-danger">
+          "{{error.message}}"
+        </div>
+        {% endif %}
 
 
     </div>
